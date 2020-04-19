@@ -16,6 +16,6 @@ class RequestError(Exception):
 
 
 class RequestCodeError(RequestError):
-    """Raised when requested coin_id not found"""
+    """Raised when request status code is >= 400"""
     def __init__(self, message, error_code):
         super().__init__(message + "\n %s" % ' '.join((str(error_code), error_codes_mapping.get(error_code))))
